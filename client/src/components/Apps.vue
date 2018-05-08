@@ -31,7 +31,7 @@
 <style scoped>
 
   .apps {
-    max-width: 960px;
+    max-width: 960px !important;
   }
   .app-icon-image {
     width: 152px;

@@ -106,6 +106,13 @@
           v-flex.left-side.pr-2(sm2) experience
           v-flex.right-side(sm10)
             v-layout(wrap)
+              v-flex.company(xs8) H-E-B Grocery, San Antonio, TX
+              v-flex.timespan(xs4) Apr 2018 – Present
+              v-flex.description(xs12)
+                .job-title Senior Developer
+        v-layout.experience(wrap)
+          v-flex.right-side(sm10, offset-sm2)
+            v-layout(wrap)
               v-flex.company(xs8) Harland Clarke Holdings, San Antonio, TX
               v-flex.timespan(xs4) Jan 2016 – Apr 2018
               v-flex.description(xs12)
