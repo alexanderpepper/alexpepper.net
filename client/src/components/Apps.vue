@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-container(fluid)
+  v-container.apps(fluid)
     v-slide-y-transition(mode='out-in')
       v-layout(row, wrap)
         v-flex.app-icon-container.my-2(xs6, sm4, md3, v-for='app in apps', :key='app.id')
@@ -29,6 +29,10 @@
 </script>
 
 <style scoped>
+
+  .apps {
+    max-width: 960px;
+  }
   .app-icon-image {
     width: 152px;
     height: 152px;

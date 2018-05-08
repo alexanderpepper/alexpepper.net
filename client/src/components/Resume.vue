@@ -2,36 +2,36 @@
   v-container(fluid)
     v-slide-y-transition(mode='out-in')
       #resume
-        v-layout.name
+        v-layout.name(wrap)
           v-flex.right-side(sm10, offset-sm2)
             v-flex(xs12)
               h1
-        v-layout.summary
+        v-layout.summary(wrap)
           v-flex.left-side.pr-2(sm2) summary
           v-flex.right-side(sm10)
             v-flex(xs12) Software engineer with a strong background in object-oriented design, relational databases, application security, and mobile and web app development. Experienced in providing estimates, planning architecture, test-driven development, source control, conducting code reviews, and iterative development. Particularly interested in UI/UX and building with emergent mobile and web technologies.
-        v-layout.links
+        v-layout.links(wrap)
           v-flex.left-side.pr-2(sm2) links
           v-flex.right-side(sm10)
             v-layout(wrap)
-              v-flex(sm6)
+              v-flex(sm6, xs12)
                 a(href='https://alexpepper.us') alexpepper.us
-              v-flex(sm6)
+              v-flex(sm6, xs12)
                 a(href='https://github.com/alexanderpepper') github.com/alexanderpepper
-              v-flex(sm6)
+              v-flex(sm6, xs12)
                 a(href='https://www.codeschool.com/users/alexpepper') codeschool.com/users/alexpepper
-              v-flex(sm6)
+              v-flex(sm6, xs12)
                 a(href='http://itunes.com/alexanderpepper') itunes.com/alexanderpepper
-              v-flex(sm6)
+              v-flex(sm6, xs12)
                 a(href="http://itunes.com/brianwalker") itunes.com/brianwalker
-              v-flex(sm6)
+              v-flex(sm6, xs12)
                 a(href="https://play.google.com/store/apps/developer?id=Brian+Browne+Walker") play.google.com/BrianBrowneWalker
-        v-layout.technology
+        v-layout.technology(wrap)
           v-flex.left-side.pr-2(sm2) technology
           v-flex.right-side(sm10)
-            v-layout
+            v-layout(wrap)
               v-flex.technology-column(xs3)
-                .technology-header Languages
+                .technology-header languages
                 ul
                   li Java
                   li C#
@@ -48,7 +48,7 @@
                   li CSS3
                   li SASS
               v-flex.technology-column(xs3)
-                .technology-header Frameworks
+                .technology-header frameworks
                 ul
                   li Cocoa Touch
                   li Android SDK
@@ -67,7 +67,7 @@
                   li Three.js
 
               v-flex.technology-column(xs3)
-                .technology-header Systems
+                .technology-header systems
                 ul
                   li MongoDB
                   li Oracle Database
@@ -85,7 +85,7 @@
                   li LetsEncrypt
                   li Gitlab
               v-flex.technology-column(xs3)
-                .technology-header Tools
+                .technology-header tools
                 ul
                   li WebStorm
                   li IntelliJ
@@ -102,19 +102,7 @@
                   li PM2
                   li Unity
                   li Vuforia
-        v-layout.education
-          v-flex.left-side.pr-2(sm2) education
-          v-flex.right-side(sm10)
-            v-layout
-              v-flex.achievement(xs7)
-                .degree Bachelor of Science in Computer Science
-                .university Fall 2007, University of New Orleans
-              v-flex.achievement(xs5)
-                a.certification(href='https://www.youracclaim.com/badges/74394436-ad53-4fa2-9be7-ca3c00d648e1/public_url')
-                  .degree Oracle Certified Associate
-                  .university Jan 2014, Java SE 7 Programmer
-
-        v-layout.experience
+        v-layout.experience(wrap)
           v-flex.left-side.pr-2(sm2) experience
           v-flex.right-side(sm10)
             v-layout(wrap)
@@ -133,7 +121,7 @@
                   li Maintained Ubuntu virtual private servers on DigitalOcean for hosting web apps and services
                   li Used AWS for content management, domain registration, DNS management, and sending email notifications
 
-        v-layout.experience
+        v-layout.experience(wrap)
           v-flex.right-side(sm10, offset-sm2)
             v-layout(wrap)
               v-flex.company(xs8) Denim Group, LLC, San Antonio, TX
@@ -147,7 +135,7 @@
                   li Produced an iOS app and its corresponding Spring/Hibernate web service for a major sporting organization
                   li Performed application security audits of mobile and web apps using automated software and manual techniques
                   li Conducted interviews with candidates and participated regularly in meetings and demos with clients
-        v-layout.experience
+        v-layout.experience(wrap)
           v-flex.right-side(sm10, offset-sm2)
             v-layout(wrap)
               v-flex.company(xs8) Independent Work, San Antonio, TX
@@ -157,7 +145,7 @@
                 ul
                   li Taught self iOS and Android development with native frameworks and published 8 iOS and 4 Android apps:
                   li
-                    v-layout(wrap)
+                    v-layout.apps(wrap)
                       v-flex.app(xs3)
                         .app-name MusicWatch
                         .app-info iOS: Feb 2011
@@ -188,7 +176,7 @@
                         .app-info Android: Feb 2012
                   li Responsible for the UI/UX, implementation, testing, deployment, store presence, and continued improvement of all apps
 
-        v-layout.experience
+        v-layout.experience(wrap)
           v-flex.right-side(sm10, offset-sm2)
             v-layout(wrap)
               v-flex.company(xs8) eVenture Technologies, LLC, New Orleans, LA
@@ -199,36 +187,47 @@
                   li Created and maintained Oracle Forms, Reports, and PL/SQL procedures for a mission-critical project
                   li Helped to ensure sustainability of a legacy Oracle Forms project by creating a conversion prototype using JDeveloper 11g
                   li Wrote standards for and hundreds of pages of software specification documents to facilitate the conversion process
-        v-layout.experience
+        v-layout.experience(wrap)
           v-flex.right-side(sm10, offset-sm2)
-            v-layout(wrap)
-              v-flex.unrelated.mb-2(md4)
+            v-layout.unrelated-positions(wrap)
+              v-flex.unrelated.mb-2(md4, sm6, xs12)
                 .unrelated-timespan Aug 2006 – May 2007
                 .unrelated-job-title Researcher/Java Developer
                 .unrelated-company Naval Research Labs,
                 .unrelated-company NASA Stennis Space Center, MS
-              v-flex.unrelated.mb-2(md4)
+              v-flex.unrelated.mb-2(md4, sm6, xs12)
                 .unrelated-timespan Jun 2006 – Aug 2006
                 .unrelated-job-title Java Help Desk
                 .unrelated-company UNO Computer Science Dept,
                 .unrelated-company New Orleans, LA
-              v-flex.unrelated.mb-2(md4)
+              v-flex.unrelated.mb-2(md4, sm6, xs12)
                 .unrelated-timespan Jun 2005 – May 2006
                 .unrelated-job-title Researcher/Java Developer
                 .unrelated-company Naval Research Labs,
                 .unrelated-company NASA Stennis Space Center, MS
-              v-flex.unrelated.mb-2(md4)
+              v-flex.unrelated.mb-2(md4, sm6, xs12)
                 .unrelated-timespan Oct 2010 – Nov 2010
                 .unrelated-job-title Document Scanning Contractor
                 .unrelated-company Cambias AllState, Metairie, LA
-              v-flex.unrelated.mb-2(md4)
+              v-flex.unrelated.mb-2(md4, sm6, xs12)
                 .unrelated-timespan Oct 2005 – Apr 2006
                 .unrelated-job-title Directory Assistance Operator
                 .unrelated-company INFONXX, San Antonio, TX
-              v-flex.unrelated.mb-2(md4)
+              v-flex.unrelated.mb-2(md4, sm6, xs12)
                 .unrelated-timespan Apr 2001 – Jun 2005
                 .unrelated-job-title Cook, Relief Kitchen Manager
                 .unrelated-company Remoulade Inc, New Orleans, LA
+          v-layout.education(wrap)
+            v-flex.left-side.pr-2(sm2) education
+            v-flex.right-side(sm10)
+              v-layout(wrap)
+                v-flex.achievement(xs7)
+                  .degree Bachelor of Science in Computer Science
+                  .university Fall 2007, University of New Orleans
+                v-flex.achievement(xs5)
+                  a.certification(href='https://www.youracclaim.com/badges/74394436-ad53-4fa2-9be7-ca3c00d648e1/public_url')
+                    .degree Oracle Certified Associate
+                    .university Jan 2014, Java SE 7 Programmer
 </template>
 
 <script>
@@ -246,8 +245,8 @@
     margin-top: 5px;
   }
 
-  .education, .technology, .experience, .summary, .links {
-    margin-bottom: 20px;
+  .education, .technology, .experience, .summary, .links, .unrelated-positions {
+    margin-bottom: 16px;
   }
 
   .education .certification {
@@ -361,13 +360,7 @@
     content: "[Henry] Alex(ander) Pepper";
   }
 
-  @media screen and (min-width: 408px) and (max-width: 538px) {
-    .name h1::after{
-      content: "Alex(ander) Pepper";
-    }
-  }
-
-  @media screen and (max-width: 408px) {
+  @media screen and (max-width: 420px) {
     .name h1::after{
       content: "Alex Pepper";
     }
@@ -375,52 +368,68 @@
 
   @media screen and (max-width: 632px) {
     .education .achievement {
-      width: 100%;
+      max-width: 100%;
+      flex-basis: 100%;
+      margin-bottom: 8px;
     }
     .education .certification {
       text-align: left;
-      margin-top: 8px;
     }
   }
 
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 700px) {
     .left-side {
+      margin-bottom: 4px;
+      max-width: 100%;
+      flex-basis: 100%;
       text-align: left;
-      padding-left: 15px;
-      margin-bottom: 5px;
     }
-    .experience .description {
-      overflow: auto;
+
+    .right-side {
+      margin-left: 0;
+      max-width: 100%;
+      flex-basis: 100%;
     }
+
     .name .right-side {
       text-align: center;
+      max-width: 100%;
+      flex-basis: 100%;
+      margin-left: 0;
     }
   }
   @media screen and (max-width: 624px) {
     .experience .company,
     .experience .timespan {
-      width: 100%;
+      max-width: 100%;
+      flex-basis: 100%;
     }
 
     .experience .timespan {
       text-align: left;
     }
-
-    .experience .app {
-      width: 33.33333333%
-    }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 550px) {
     .technology .technology-column {
-      width: 50%;
+      flex-basis: 50%;
+      max-width: 50%;
+      margin-bottom: 8px;
     }
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 650px) {
     .experience .app {
-      width: 50%;
+      flex-basis: 33.333333%;
+      max-width: 33.333333%;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .experience .app {
+      flex-basis: 50%;
+      max-width: 50%;
     }
   }
 </style>
