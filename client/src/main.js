@@ -12,6 +12,7 @@ import {
   VIcon,
   VGrid,
   VToolbar,
+  VCarousel,
   transitions
 } from 'vuetify'
 
@@ -27,6 +28,7 @@ Vue.use(Vuetify, {
     VIcon,
     VGrid,
     VToolbar,
+    VCarousel,
     transitions
   },
   directives: {

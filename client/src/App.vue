@@ -4,9 +4,9 @@
       v-list
         v-list-tile(ripple, @click='menuItemClicked(item)', value='true', v-for='(item, i) in items', :key='i')
           v-list-tile-action
-            v-icon(v-html='item.icon')
+            v-icon.headline(v-html='item.icon')
           v-list-tile-content
-            v-list-tile-title(v-text='item.title')
+            v-list-tile-title.subheading(v-text='item.title')
     v-toolbar(app, clipped-left)
       v-toolbar-side-icon(@click.stop='drawer = !drawer')
       v-toolbar-title(v-text='title')
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import apps from './constants/apps'
+
 export default {
   name: 'App',
   data () {
@@ -29,46 +31,13 @@ export default {
           title: 'Apps',
           name: 'Apps'
         },
-        {
-          title: 'MusicWatch',
-          name: 'App',
-          id: 'musicwatch'
-        },
-        {
-          title: 'BookWatch',
-          name: 'App',
-          id: 'bookwatch'
-        },
-        {
-          title: 'AppWatch',
-          name: 'App',
-          id: 'appwatch'
-        },
-        {
-          title: 'All Flags',
-          name: 'App',
-          id: 'all-flags'
-        },
-        {
-          title: 'I Ching',
-          name: 'App',
-          id: 'i-ching'
-        },
-        {
-          title: 'Tao Te Ching',
-          name: 'App',
-          id: 'tao-te-ching'
-        },
-        {
-          title: 'Hua Hu Ching',
-          name: 'App',
-          id: 'hua-hu-ching'
-        },
-        {
-          title: 'Art Of War',
-          name: 'App',
-          id: 'art-of-war'
-        },
+        ...apps.map(app => {
+          return {
+            title: app.name,
+            name: 'App',
+            id: app.id
+          }
+        }),
         {
           icon: 'work',
           title: 'Resume',
