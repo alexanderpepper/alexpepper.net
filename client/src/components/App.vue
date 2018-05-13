@@ -1,22 +1,22 @@
 <template lang="pug">
   v-container.app(fluid)
     v-slide-y-transition(mode='out-in')
-      v-layout(row, wrap)
+      v-layout.mt-3(row, wrap)
         v-flex(xs12)
           h2.catchy-blurb.text-xs-center(v-text='app.blurb')
-        v-flex(lg4, md5, sm6)
-          app-video(:app='app')
-        v-flex(lg8, md7, sm6)
-          v-carousel.screenshot-carousel.elevation-0
+        v-flex(lg4, md5, sm7)
+          app-video.mx-auto.mb-3(:app='app')
+        v-flex(lg4, md7, sm5)
+          .description.mx-auto
+            app-icon.mb-2(:app='app', :size='256')
+            .headline {{ app.iTunesData.trackName }}
+            .body-1.mb-3(v-html='app.iTunesData.description')
+            a.app-store-badge(:href='app.iTunesData.trackViewUrl', target='_')
+              img(src='/static/app-store-badge.svg')
+        v-flex(xs12, sm12, md12, lg4)
+          .text-xs-center.headline.mt-4.mb-2 Screenshots
+          v-carousel.screenshot-carousel.elevation-8.mx-auto
             v-carousel-item.screenshot(v-for='(screenshotUrl, i) in app.screenshotUrls', :src='screenshotUrl', :key='i')
-          a(:href='app.iTunesData.trackViewUrl', target='_')
-            .app-store-badge
-        v-flex(xs3)
-          app-icon(:app='app', :size='200')
-        v-flex(xs9)
-          .description
-            span(v-html='app.iTunesData.description')
-
 </template>
 
 <script>
@@ -67,18 +67,33 @@
 
   .description {
     line-height: 1.2;
-  }
-  .app-store-badge {
-    background-image: url("https://s3.amazonaws.com/alexpepper.us/images/app-store-badge.png");
-    width: 232px;
-    height: 81px;
-    background-size: 232px 81px;
-    margin: 0 auto 14px auto;
+    max-width: 375px;
+
   }
 
   .screenshot-carousel {
+    background-color: #ddd;
     width: 500px;
     height: 666px;
+  }
+
+  @media (max-width: 600px) {
+    .screenshot-carousel {
+      width: 375px;
+      height: 500px;
+    }
+  }
+
+  @media (max-width: 428px) {
+    .screenshot-carousel {
+      width: 300px;
+      height: 400px;
+    }
+  }
+
+
+  .app-store-badge img {
+    width: 256px;
   }
 </style>
 
@@ -88,5 +103,18 @@
     max-width: 100%;
     object-fit: contain;
   }
+  /*.carousel .carousel__right .btn__content .icon,*/
+  /*.carousel .carousel__left .btn__content .icon{*/
+    /*color: black;*/
+  /*}*/
+  /**/
+  /*.btn.btn--icon.btn--small.theme--dark.carousel__controls__item.carousel__controls__item--active {*/
+    /*color: #ddd;*/
+  /*}*/
+  /**/
+  /*.btn.btn--icon.btn--small.theme--dark.carousel__controls__item {*/
+    /*color: black;*/
+  /*}*/
+
 </style>
 

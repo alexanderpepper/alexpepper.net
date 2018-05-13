@@ -2,17 +2,18 @@
   v-container.apps(fluid)
     v-slide-y-transition(mode='out-in')
       v-layout(row, wrap)
-        v-flex.app-icon-container.my-2(xs6, sm4, md3, v-for='app in apps', :key='app.id')
+        v-flex.app-icon-container.my-3(xs6, sm4, md3, v-for='app in apps', :key='app.id')
             .text-xs-center
               router-link(:to='{name: "App", params: {id: app.id}}')
-                app-icon(:app='app')
-              .text-xs-center.title {{ app.name }}
+                app-icon.mx-auto.mb-2(:app='app', size='180')
+              .text-xs-center.headline.mt-2 {{ app.name }}
 </template>
 
 <script>
   import apps from '../constants/apps'
   import AppIcon from './AppIcon'
   import iTunesService from '../services/iTunesService'
+
   export default {
     props: ['setTitle'],
     components: {AppIcon},
@@ -28,7 +29,7 @@
 
 <style scoped>
   .apps {
-    max-width: 960px !important;
+    max-width: 1024px !important;
   }
 
   @media screen and (max-width: 420px) {

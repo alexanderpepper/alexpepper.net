@@ -16,7 +16,6 @@
     position: relative;
     height: 798px;
     width: 380px;
-    margin: 0 auto;
     background-image: url("https://s3.amazonaws.com/alexpepper.us/images/iphone.png");
   }
 
