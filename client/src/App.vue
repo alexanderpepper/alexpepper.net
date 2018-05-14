@@ -7,7 +7,7 @@
             v-icon.headline(v-html='item.icon')
           v-list-tile-content
             v-list-tile-title.subheading(v-text='item.title')
-    v-toolbar(app, clipped-left)
+    v-toolbar(app, dense, clipped-left)
       v-toolbar-side-icon(@click.stop='drawer = !drawer')
       v-toolbar-title(v-text='title')
       v-spacer
@@ -64,6 +64,7 @@ export default {
 </script>
 
 <style>
+
   a {
     color: black;
     text-decoration: none;

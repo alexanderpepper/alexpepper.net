@@ -9,14 +9,17 @@
         v-flex(lg4, md7, sm5)
           .description.mx-auto
             app-icon.mb-2(:app='app', :size='256')
-            .headline {{ app.iTunesData.trackName }}
-            .body-1.mb-3(v-html='app.iTunesData.description')
+            .headline.pl-1 {{ app.iTunesData.trackName }}
+            .body-1.pl-1.mb-3(v-html='app.iTunesData.description')
             a.app-store-badge(:href='app.iTunesData.trackViewUrl', target='_')
               img(src='/static/app-store-badge.svg')
-        v-flex(xs12, sm12, md12, lg4)
-          .text-xs-center.headline.mt-4.mb-2 Screenshots
-          v-carousel.screenshot-carousel.elevation-8.mx-auto
-            v-carousel-item.screenshot(v-for='(screenshotUrl, i) in app.screenshotUrls', :src='screenshotUrl', :key='i')
+        v-flex(xs12, sm12, md12, lg4, v-if='app.screenshotUrls && app.screenshotUrls.length')
+          .screenshot-carousel.elevation-1.mx-auto
+            v-toolbar(dense)
+              v-toolbar-title Screenshots
+            .pa-3
+              v-carousel.elevation-0(interval='2500')
+                v-carousel-item.screenshot(v-for='(screenshotUrl, i) in app.screenshotUrls', :src='screenshotUrl', :key='i')
 </template>
 
 <script>
@@ -65,33 +68,24 @@
 
 <style scoped>
 
+  .app {
+    max-width: 1300px;
+  }
+
   .description {
     line-height: 1.2;
-    max-width: 375px;
+    max-width: 360px;
+  }
 
+  .description img {
+    width: 100%;
   }
 
   .screenshot-carousel {
-    background-color: #ddd;
-    width: 500px;
-    height: 666px;
+    background-color: #aaa;
+    width: 100%;
+    max-width: 540px;
   }
-
-  @media (max-width: 600px) {
-    .screenshot-carousel {
-      width: 375px;
-      height: 500px;
-    }
-  }
-
-  @media (max-width: 428px) {
-    .screenshot-carousel {
-      width: 300px;
-      height: 400px;
-    }
-  }
-
-
   .app-store-badge img {
     width: 256px;
   }
@@ -114,6 +108,13 @@
   /**/
   /*.btn.btn--icon.btn--small.theme--dark.carousel__controls__item {*/
     /*color: black;*/
+  /*}*/
+
+  .carousel__controls {
+    background-color: transparent;
+  }
+  /*.flex {*/
+    /*border: 1px solid green;*/
   /*}*/
 
 </style>
