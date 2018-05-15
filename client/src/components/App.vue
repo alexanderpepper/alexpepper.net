@@ -6,26 +6,26 @@
           v-layout.video-description
             v-flex.pb-3(xs12)
               app-video.mx-auto.mb-3(:app='app')
-              .text-xs-center
-                v-btn(outline, large, @click='showScreenshots = true') Screenshots
             v-flex(xs12)
               .description.pl-3.mx-auto
                 app-icon.mb-2(:app='app', :size='256')
                 .headline.pl-1 {{ app.iTunesData.trackName }}
+                v-btn.mx-1.my-2(outline, @click='showScreenshots = true') View Screenshots
                 .body-1.pl-1.mb-3(v-html='app.iTunesData.description')
-                a.app-store-badge(:href='app.iTunesData.trackViewUrl', target='_')
+                a.app-store-badge.mb-1(:href='app.iTunesData.trackViewUrl', target='_')
                   img(src='/static/app-store-badge.svg')
-
-    v-dialog(v-model='showScreenshots', max-width='560px')
+                a.app-store-badge(:href='app.iTunesData.trackViewUrl', target='_')
+                  img(src='/static/google-play-badge.png')
+    v-dialog(v-model='showScreenshots', max-width='560px',  hide-overlay, :fullscreen='$vuetify.breakpoint.xsOnly', :scrollable='$vuetify.breakpoint.xsOnly', transition='dialog-bottom-transition')
       .screenshot-carousel.mx-auto
-        v-toolbar.elevation-4r(dense)
-          v-toolbar-title Screenshots
+        v-toolbar(dense)
+          v-toolbar-title {{ app.name }} Screenshots
           v-spacer
           v-btn(icon, @click='showScreenshots = false')
             v-icon close
-        .pa-3
-          v-carousel.elevation-0(interval='2500')
-            v-carousel-item.screenshot(v-for='(screenshotUrl, i) in app.screenshotUrls', :src='screenshotUrl', :key='i')
+        .px-3
+          v-carousel.elevation-0(interval='2500', v-if='app.screenshotUrls && app.screenshotUrls.length')
+            v-carousel-item.screenshot.pt-3.pb-5(v-for='(screenshotUrl, i) in app.screenshotUrls', :src='screenshotUrl', :key='i')
 
 </template>
 
@@ -82,7 +82,7 @@
 
   .description {
     line-height: 1.2;
-    max-width: 360px;
+    max-width: 375px;
   }
 
   .description img {
@@ -94,8 +94,16 @@
     width: 100%;
   }
 
+  .screenshot {
+    padding-bottom: 44px;
+  }
+
+  .app-store-badge {
+    display: block;
+  }
+
   .app-store-badge img {
-    width: 256px;
+    width: 200px;
   }
   @media (max-width: 699px) {
     .video-description {
@@ -112,7 +120,7 @@
   }
 
   .carousel__controls {
-    background-color: transparent;
+    background-color: transparent !important;
   }
 </style>
 
