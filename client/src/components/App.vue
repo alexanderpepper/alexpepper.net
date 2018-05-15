@@ -77,7 +77,7 @@
 <style scoped>
 
   .app {
-    max-width: 800px;
+    max-width: 800px !important;
   }
 
   .description {
