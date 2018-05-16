@@ -32,7 +32,7 @@
     max-width: 1024px !important;
   }
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 479px) {
     .app-icon-container {
       flex-basis: 100%;
       max-width: 100%;
