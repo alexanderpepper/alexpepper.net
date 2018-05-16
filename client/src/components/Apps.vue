@@ -34,8 +34,10 @@
 
   @media screen and (max-width: 479px) {
     .app-icon-container {
-      flex-basis: 100%;
-      max-width: 100%;
+      flex-basis: 100% !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      min-width: 100% !important;
     }
   }
 </style>
