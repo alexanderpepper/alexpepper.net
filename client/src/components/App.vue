@@ -14,7 +14,7 @@
                 .body-1.pl-1.mb-3(v-html='app.iTunesData.description')
                 a.app-store-badge.mb-1(:href='app.iTunesData.trackViewUrl', target='_')
                   img(src='/static/app-store-badge.svg')
-                a.app-store-badge(:href='app.iTunesData.trackViewUrl', target='_')
+                a.app-store-badge(:href='app.playStoreUrl', target='_', v-if='app.playStoreId')
                   img(src='/static/google-play-badge.png')
     v-dialog(v-model='showScreenshots', max-width='560px',  hide-overlay, :fullscreen='$vuetify.breakpoint.xsOnly', :scrollable='$vuetify.breakpoint.xsOnly', transition='dialog-bottom-transition')
       .screenshot-carousel.mx-auto
@@ -63,6 +63,7 @@
         this.app = apps.filter(app => app.id === this.id)[0]
         this.setTitle(this.app.name)
         this.app.videoUrl = `${s3}/videos/${this.id}.mov`
+        this.app.playStoreUrl = `https://play.google.com/store/apps/details?id=${this.app.playStoreId}`
         this.app.iTunesData = await iTunesService.getApp(this.app.iTunesId)
         this.app.iTunesData.description = this.app.iTunesData.description.replace(/\n/g, '<br/>')
         this.app.screenshotUrls = [
