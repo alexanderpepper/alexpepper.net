@@ -1,5 +1,6 @@
 'use strict'
 const exec = require('child_process').exec
+const express = require('express')
 module.exports = function (app) {
   if (!process.env.SKIP_CLIENT) {
     console.log('Building client...')
@@ -9,4 +10,5 @@ module.exports = function (app) {
       console.log('Done building client')
     })
   }
+  app.use('/checklist', express.static('../app-checklist/dist'))
 }
