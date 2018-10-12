@@ -15,6 +15,6 @@
   }
 
   .app-icon-image, .app-icon-image > img {
-    border-radius: 17%;
+    border-radius: 22%;
   }
 </style>
