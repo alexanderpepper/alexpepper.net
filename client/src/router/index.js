@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Resume from '@/components/Resume'
 import App from '@/components/App'
 import Apps from '@/components/Apps'
+import Privacy from '@/components/Privacy'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       name: 'App',
       component: App,
       props: true
+    },
+    {
+      path: '/p',
+      name: 'Privacy',
+      component: Privacy
     }
   ]
 })
