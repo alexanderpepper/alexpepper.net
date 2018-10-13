@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-container.privacy-policy.mx-auto(fluid)
+  v-container.privacy-policy.mt-4.mx-auto(fluid)
     v-slide-y-transition(mode='out-in')
       v-card
         v-card-text
@@ -21,6 +21,6 @@
 
 <style scoped>
   .privacy-policy {
-    max-width: 480px;
+    max-width: 480px !important;
   }
 </style>
