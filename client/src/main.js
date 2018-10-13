@@ -14,6 +14,7 @@ import {
   VToolbar,
   VCarousel,
   VDialog,
+  VCard,
   transitions
 } from 'vuetify'
 
@@ -31,6 +32,7 @@ Vue.use(Vuetify, {
     VToolbar,
     VCarousel,
     VDialog,
+    VCard,
     transitions
   },
   directives: {
