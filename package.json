@@ -21,7 +21,8 @@
     "loopback-component-explorer": "^5.0.0",
     "pm2": "^2.10.3",
     "serve-favicon": "^2.0.1",
-    "strong-error-handler": "^2.0.0"
+    "strong-error-handler": "^2.0.0",
+    "superagent": "^4.0.0-beta.5"
   },
   "devDependencies": {
     "eslint": "^3.17.1",

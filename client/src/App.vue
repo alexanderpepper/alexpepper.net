@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import apps from './constants/apps'
+import apps from '../../server/constants/apps'
 
 export default {
   name: 'App',

@@ -12,5 +12,9 @@
       "../common/mixins",
       "./mixins"
     ]
+  },
+  "App": {
+    "dataSource": null,
+    "public": true
   }
 }

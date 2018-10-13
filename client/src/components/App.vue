@@ -30,9 +30,9 @@
 </template>
 
 <script>
-  import apps from '../constants/apps'
-  import s3 from '../constants/s3'
-  import iTunesService from '../services/iTunesService'
+  import apps from '../../../server/constants/apps'
+  import s3 from '../../../server/constants/s3'
+  import AppService from '../services/AppService'
   import AppIcon from './AppIcon'
   import AppVideo from './AppVideo'
 
@@ -64,7 +64,7 @@
         this.setTitle(this.app.name)
         this.app.videoUrl = `${s3}/videos/${this.id}.mov`
         this.app.playStoreUrl = `https://play.google.com/store/apps/details?id=${this.app.playStoreId}`
-        this.app.iTunesData = await iTunesService.getApp(this.app.iTunesId)
+        this.app.iTunesData = await AppService.get(this.app.iTunesId)
         this.app.iTunesData.description = this.app.iTunesData.description.replace(/\n/g, '<br/>')
         this.app.screenshotUrls = [
           ...this.app.iTunesData.screenshotUrls,

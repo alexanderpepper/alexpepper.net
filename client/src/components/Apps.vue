@@ -10,16 +10,16 @@
 </template>
 
 <script>
-  import apps from '../constants/apps'
+  import apps from '../../../server/constants/apps'
   import AppIcon from './AppIcon'
-  import iTunesService from '../services/iTunesService'
+  import AppService from '../services/AppService'
 
   export default {
     props: ['setTitle'],
     components: {AppIcon},
     async created () {
       this.setTitle('Apps')
-      this.apps = await iTunesService.getApps()
+      this.apps = await AppService.all()
     },
     data () {
       return {apps}
