@@ -11,4 +11,5 @@ module.exports = function (app) {
     })
   }
   app.use('/checklist', express.static('../app-checklist/dist'))
+  app.use('/tao', express.static('../tao-web/dist'))
 }
