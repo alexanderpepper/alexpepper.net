@@ -1,7 +1,7 @@
 {
   "apps" : [{
     "name"        : "alexpepper-us",
-    "script"      : "./server/server.js",
+    "script"      : "./server.js",
     "env": {
       "NODE_ENV": "development"
     },

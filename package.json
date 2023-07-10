@@ -1,38 +1,22 @@
 {
-  "name": "alexpepper-us",
+  "name": "alexpepper.net",
   "version": "1.0.0",
-  "main": "server/server.js",
-  "engines": {
-    "node": ">=4"
-  },
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "lint": "eslint .",
-    "start": "node .",
-    "posttest": "npm run lint && nsp check"
+    "start:dev": "nodemon .",
+    "start:prod": "pm2 start pm2.json --env production",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "compression": "^1.0.3",
-    "cors": "^2.5.2",
-    "eslint-config-standard": "^12.0.0",
-    "express-history-api-fallback": "^2.2.1",
-    "helmet": "^3.10.0",
-    "loopback": "^3.0.0",
-    "loopback-boot": "^2.6.5",
-    "loopback-component-explorer": "^5.0.0",
-    "pm2": "^2.10.3",
-    "serve-favicon": "^2.0.1",
-    "strong-error-handler": "^2.0.0",
-    "superagent": "^4.0.0-beta.5"
+    "body-parser": "^2.0.0-beta.2",
+    "cors": "^2.8.5",
+    "express": "^5.0.0-beta.1",
+    "superagent": "^8.0.9"
   },
   "devDependencies": {
-    "eslint": "^3.17.1",
-    "eslint-config-loopback": "^8.0.0",
-    "nsp": "^2.1.0"
-  },
-  "repository": {
-    "type": "",
-    "url": ""
-  },
-  "license": "UNLICENSED",
-  "description": "alexpepper-us"
+    "eslint-config-standard": "^16.0.3"
+  }
 }

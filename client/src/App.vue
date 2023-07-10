@@ -18,44 +18,42 @@
 </template>
 
 <script>
-import apps from '../../server/constants/apps'
+import apps from '../../app/constants/apps'
 
 export default {
   name: 'App',
-  data () {
-    return {
-      drawer: false,
-      items: [
-        {
-          icon: 'phone_iphone',
-          title: 'Apps',
-          name: 'Apps'
-        },
-        ...apps.map(app => {
-          return {
-            title: app.name,
-            name: 'App',
-            id: app.id
-          }
-        }),
-        {
-          icon: 'work',
-          title: 'Resume',
-          name: 'Resume'
+  data: () => ({
+    drawer: false,
+    items: [
+      {
+        icon: 'phone_iphone',
+        title: 'Apps',
+        name: 'Apps'
+      },
+      ...apps.map(app => {
+        return {
+          title: app.name,
+          name: 'App',
+          id: app.id
         }
-      ],
-      title: '',
-      isDarkTheme: false
-    }
-  },
+      }),
+      {
+        icon: 'work',
+        title: 'Resume',
+        name: 'Resume'
+      }
+    ],
+    title: '',
+    isDarkTheme: false
+  }),
   methods: {
     setTitle (title) {
       this.title = title
     },
     menuItemClicked (item) {
-      const route = {name: item.name}
+      const route = { name: item.name }
       if (item.id) {
-        route.params = {id: item.id}
+        route.params = { id: item.id }
       }
       this.$router.push(route)
     }

@@ -1,13 +1,15 @@
-import BaseService from './BaseService'
+import request from 'superagent'
 import api from '../constants/api.js'
 
-class AppService extends BaseService {
+class AppService {
   static all () {
-    return this.GET(api.apps)
+    return request.get(api.apps)
+      .then(response => (response.body && response.body.results) || response.body)
   }
 
   static get (id) {
-    return this.GET(api.app(id))
+    return request.get(api.app(id))
+      .then(response => (response.body && response.body.results) || response.body)
   }
 }
 

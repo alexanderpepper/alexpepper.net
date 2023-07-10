@@ -4,9 +4,9 @@
 </template>
 
 <script>
-  export default {
-    props: ['app', 'size']
-  }
+export default {
+  props: ['app', 'size']
+}
 </script>
 
 <style>

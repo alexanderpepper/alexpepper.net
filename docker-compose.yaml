@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  api:
+    container_name: api
+    command: npm run start:dev
+    build:
+      target: dev
+      context: .
+      dockerfile: app/Dockerfile
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    volumes:
+      - .:/usr/src/app/api
+      - /usr/src/app/api/node_modules
+    environment:
+      DEBUG: nodejs-docker-express:*
+      NODE_ENV: development
+      DB_HOST: host.docker.internal
+  ui:
+    build:
+      target: dev
+      context: .
+      dockerfile: client/Dockerfile
+    ports:
+      - "8080:8080"
+    container_name: ui
+    volumes:
+      - ./client:/usr/src/app/ui
+      - /usr/src/app/ui/node_modules
