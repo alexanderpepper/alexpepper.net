@@ -1,19 +1,22 @@
 <template lang="pug">
-  v-app(:dark='isDarkTheme', :light='!isDarkTheme')
-    v-navigation-drawer(disable-resize-watcher, temporary, clipped, v-model='drawer', fixed, app)
-      v-list
-        v-list-tile(ripple, @click='menuItemClicked(item)', value='true', v-for='(item, i) in items', :key='i')
-          v-list-tile-action
-            v-icon.headline(v-html='item.icon')
-          v-list-tile-content
-            v-list-tile-title.subheading(v-text='item.title')
-    v-toolbar(app, dense, clipped-left)
-      v-toolbar-side-icon(@click.stop='drawer = !drawer')
+  v-app
+    v-app-bar.app-toolbar(app, fixed, clipped-left, dense, hide-on-scroll)
+      v-app-bar-nav-icon(@click.stop='drawer = !drawer')
       v-toolbar-title(v-text='title')
       v-spacer
-      v-btn(icon, @click='isDarkTheme = !isDarkTheme')
+      v-btn(icon, @click='toggleTheme')
         v-icon invert_colors
-    v-content
+
+    v-navigation-drawer(disable-resize-watcher, temporary, clipped, v-model='drawer', fixed, app)
+      v-list
+        v-list-item(ripple, @click='menuItemClicked(item)', value='true', v-for='(item, i) in items', :key='i')
+          v-list-item-action
+            v-icon(v-html='item.icon')
+          v-list-item-content
+            v-list-item-title
+              .subheading(v-text='item.title')
+
+    v-main
       router-view(:set-title='setTitle')
 </template>
 
@@ -29,6 +32,11 @@ export default {
     isDarkTheme: false
   }),
   async created () {
+    if (window.localStorage.dark === undefined) {
+      window.localStorage.dark = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'true' : 'false'
+    }
+    this.$vuetify.theme.dark = window.localStorage.dark === 'true'
+
     const apps = await AppService.all()
     this.items = [
       {
@@ -60,6 +68,10 @@ export default {
         route.params = { id: item.id }
       }
       this.$router.push(route)
+    },
+    toggleTheme () {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+      window.localStorage.dark = this.$vuetify.theme.dark
     }
   }
 }

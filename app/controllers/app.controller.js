@@ -12,3 +12,5 @@ exports.get = async (req, res) => {
 exports.all = async (req, res) => {
   return res.json(await iTunesService.all())
 }
+
+// TODO: Make an 'all' that doesn't include details
