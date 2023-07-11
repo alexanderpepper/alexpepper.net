@@ -30,7 +30,6 @@
 </template>
 
 <script>
-import { S3_URL } from '../../../app/constants/urls'
 import AppService from '../services/AppService'
 import AppIcon from '../components/AppIcon'
 import AppVideo from '../components/AppVideo'
@@ -59,9 +58,6 @@ export default {
     async initialize () {
       this.app = await AppService.get(this.id)
       this.setTitle(this.app.name)
-      this.app.videoUrl = `${S3_URL}/videos/${this.id}.mov`
-      this.app.playStoreUrl = `https://play.google.com/store/apps/details?id=${this.app.playStoreId}`
-      console.log(this.app)
       this.app.iTunesData.description = this.app.iTunesData.description.replace(/\n/g, '<br/>')
       this.app.screenshotUrls = [
         ...this.app.iTunesData.screenshotUrls,

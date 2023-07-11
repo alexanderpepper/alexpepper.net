@@ -18,13 +18,19 @@
 </template>
 
 <script>
-import apps from '../../app/constants/apps'
+import AppService from '@/services/AppService'
 
 export default {
   name: 'App',
   data: () => ({
     drawer: false,
-    items: [
+    items: [],
+    title: '',
+    isDarkTheme: false
+  }),
+  async created () {
+    const apps = await AppService.all()
+    this.items = [
       {
         icon: 'phone_iphone',
         title: 'Apps',
@@ -42,10 +48,8 @@ export default {
         title: 'Resume',
         name: 'Resume'
       }
-    ],
-    title: '',
-    isDarkTheme: false
-  }),
+    ]
+  },
   methods: {
     setTitle (title) {
       this.title = title
