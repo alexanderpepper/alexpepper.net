@@ -151,7 +151,7 @@ module.exports = [
     iTunesData: {}
   }
 ].map(app => {
-  app.videoUrl = `${S3_URL}/videos/${app.id}.mov`
+  app.videoUrl = `https://w.alexpepper.us/alexpepper/${app.id}.mov`
   app.playStoreUrl = `https://play.google.com/store/apps/details?id=${app.playStoreId}`
   return app
 })
