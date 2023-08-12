@@ -10,8 +10,8 @@ dev:
 	docker-compose up
 
 deploy:
-	docker build -t vuetify-express-postgres-starter app --target=prod
-	docker-compose up
+	docker-compose -f docker-compose.prod.yaml build --no-cache
+	docker-compose -f docker-compose.prod.yaml up
 
 clean:
 	rm -rf node_modules

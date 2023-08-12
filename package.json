@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start:dev": "nodemon .",
-    "start:prod": "pm2 start pm2.json --env production",
+    "start:prod": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +14,7 @@
     "body-parser": "^2.0.0-beta.2",
     "cors": "^2.8.5",
     "express": "^5.0.0-beta.1",
+    "express-history-api-fallback": "^2.2.1",
     "superagent": "^8.0.9"
   },
   "devDependencies": {

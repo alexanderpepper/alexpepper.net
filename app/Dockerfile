@@ -1,18 +1,30 @@
 FROM node:18-alpine as base
 
-WORKDIR /usr/src/app/api
-COPY package.json /
-COPY package-lock.json /
-EXPOSE 3000
-
-FROM base as dev
-ENV NODE_ENV=development
-RUN npm install && npm install -g nodemon
-COPY .. /
-CMD ["npm", "run", "start:dev"]
+#FROM base as dev
+#WORKDIR /usr/src/app/api
+#COPY package*.json /
+#RUN npm install && npm install -g nodemon
+#COPY .. /
+#EXPOSE 3000
+#ENV NODE_ENV=development
+#CMD ["npm", "run", "start:dev"]
 
 FROM base as prod
+RUN mkdir -p /home/node/app/node_modules && \
+    mkdir -p /home/node/app/client/node_modules && \
+    chown -R node:node /home/node/app
+
+USER node
+
+WORKDIR /home/node/app
+COPY --chown=node:node package*.json ./
+RUN npm install
+
+WORKDIR /home/node/app/client
+COPY --chown=node:node client/package*.json ./
+RUN npm install
+
+COPY --chown=node:node . .
+EXPOSE 3000
 ENV NODE_ENV=production
-RUN npm ci && npm install -g pm2
-COPY .. /
 CMD ["npm", "run", "start:prod"]

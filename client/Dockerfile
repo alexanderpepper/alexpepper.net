@@ -5,3 +5,4 @@ RUN npm install
 EXPOSE 8080
 COPY client/ ./
 CMD ["npm", "run", "serve"]
+

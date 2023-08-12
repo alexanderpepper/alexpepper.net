@@ -3,10 +3,8 @@ const cors = require('cors')
 const origin = 'http://localhost:8080'
 const responders = require('./app/middleware/responders')
 const errorHandler = require('./app/middleware/error-handler')
-const https = require('https')
-const http = require('http')
-const sslConfig = require('./app/config/ssl-config')
 const bodyParser = require('body-parser')
+const fallback = require('express-history-api-fallback')
 const { exec } = require('child_process')
 
 const PORT = process.env.PORT || 3000
@@ -16,33 +14,17 @@ const HOST = IS_PROD ? 'alexpepper.net' : 'localhost'
 
 const app = express()
 
-const createServer = (app) => {
-  if (IS_PROD) {
-    const server = https.createServer({
-      key: sslConfig.privateKey,
-      cert: sslConfig.certificate,
-      ca: sslConfig.chain
-    }, app)
-    const redirectServer = express()
-    redirectServer.get('*', function (req, res) {
-      res.redirect(`${PROTOCOL}${app.get('host')}${req.url}`)
-    })
-    redirectServer.listen(80)
-    return server
-  } else {
-    return http.createServer(app)
-  }
-}
-
 if (IS_PROD) {
   if (!process.env.SKIP_CLIENT) {
     console.log('Building client...')
     exec(`NODE_ENV=${process.env.NODE_ENV} npm run build`, { cwd: `${process.cwd()}/client` }, function (x, y) {
-      console.log(x)
-      console.log(y)
+      x && console.log(x)
+      y && console.log(y)
       console.log('Done building client')
     })
-    app.use(express.static('./client/dist'))
+    const root = './client/dist'
+    app.use(express.static(root))
+    // app.use(fallback('/index.html', { root }))
   }
 } else {
   app.use(cors({ origin }))
@@ -53,6 +35,7 @@ app.use((req, res, next) => {
 })
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+
 app.use(responders)
 
 require('./app/routes/app.routes')(app)

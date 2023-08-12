@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  api:
+    container_name: api
+    command: npm run start:prod
+    build:
+      target: prod
+      context: .
+      dockerfile: app/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app/api
+      - /usr/src/app/api/node_modules
+    environment:
+      NODE_ENV: production
+      DB_HOST: host.docker.internal
+#  ui:
+#    image: nginx:mainline-alpine
+#    container_name: ui
+#    restart: unless-stopped
+#    ports:
+#      - "80:80"
+#    volumes:
+#      - web-root:/var/www/html
+#      - ./nginx-conf:/etc/nginx/conf.d
+#      - certbot-etc:/etc/letsencrypt
+#      - certbot-var:/var/lib/letsencrypt
+#    depends_on:
+#      - nodejs
+#    networks:
+#      - app-network
