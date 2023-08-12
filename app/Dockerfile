@@ -28,6 +28,7 @@ WORKDIR /home/node/app/client
 COPY --chown=node:node client/package*.json ./
 RUN npm install
 
+WORKDIR /home/node/app
 COPY --chown=node:node . .
 EXPOSE 3000
 ENV NODE_ENV=production
