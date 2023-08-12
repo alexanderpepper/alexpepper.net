@@ -22,7 +22,7 @@ RUN npm install
 
 WORKDIR /home/node/app/client
 COPY --chown=node:node client/package*.json ./
-RUN npm install
+RUN npm install && npm run build
 
 USER node
 WORKDIR /home/node/app

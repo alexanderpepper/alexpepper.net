@@ -15,17 +15,17 @@ const HOST = IS_PROD ? 'alexpepper.net' : 'localhost'
 const app = express()
 
 if (IS_PROD) {
-  if (!process.env.SKIP_CLIENT) {
-    console.log('Building client...')
-    exec(`NODE_ENV=${process.env.NODE_ENV} npm run build`, { cwd: `${process.cwd()}/client` }, function (x, y) {
-      x && console.log(x)
-      y && console.log(y)
-      console.log('Done building client')
-    })
-    // const root = './client/dist'
-    // app.use(express.static(root))
-    // app.use(fallback('/index.html', { root }))
-  }
+  // if (!process.env.SKIP_CLIENT) {
+  //   console.log('Building client...')
+  //   exec(`NODE_ENV=${process.env.NODE_ENV} npm run build`, { cwd: `${process.cwd()}/client` }, function (x, y) {
+  //     x && console.log(x)
+  //     y && console.log(y)
+  //     console.log('Done building client')
+  //   })
+  //   // const root = './client/dist'
+  //   // app.use(express.static(root))
+  //   // app.use(fallback('/index.html', { root }))
+  // }
 } else {
   app.use(cors({ origin }))
 }
