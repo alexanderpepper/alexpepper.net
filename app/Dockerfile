@@ -13,7 +13,10 @@ FROM base as prod
 RUN mkdir -p /home/node/app/node_modules && \
     mkdir -p /home/node/app/client/node_modules && \
     mkdir -p /home/node/app/client/dist && \
+    touch /home/node/app/client/dist/index.html && \
     chown -R node:node /home/node/app
+
+
 
 USER node
 
