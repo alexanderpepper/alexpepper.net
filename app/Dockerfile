@@ -12,6 +12,7 @@ CMD ["npm", "run", "start:dev"]
 FROM base as prod
 RUN mkdir -p /home/node/app/node_modules && \
     mkdir -p /home/node/app/client/node_modules && \
+    mkdir -p /home/node/app/client/dist && \
     chown -R node:node /home/node/app
 
 USER node
