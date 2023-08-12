@@ -28,7 +28,7 @@ USER node
 WORKDIR /home/node/app
 COPY --chown=node:node . .
 
-WORKDIR /home/node/app
+WORKDIR /home/node/app/client
 RUN npm run build
 
 WORKDIR /home/node/app
