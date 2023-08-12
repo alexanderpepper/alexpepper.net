@@ -22,8 +22,8 @@ if (IS_PROD) {
       y && console.log(y)
       console.log('Done building client')
     })
-    const root = './client/dist'
-    app.use(express.static(root))
+    // const root = './client/dist'
+    // app.use(express.static(root))
     // app.use(fallback('/index.html', { root }))
   }
 } else {

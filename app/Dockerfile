@@ -1,13 +1,13 @@
 FROM node:18-alpine as base
 
-#FROM base as dev
-#WORKDIR /usr/src/app/api
-#COPY package*.json /
-#RUN npm install && npm install -g nodemon
-#COPY .. /
-#EXPOSE 3000
-#ENV NODE_ENV=development
-#CMD ["npm", "run", "start:dev"]
+FROM base as dev
+WORKDIR /usr/src/app/api
+COPY package*.json /
+RUN npm install && npm install -g nodemon
+COPY .. /
+EXPOSE 3000
+ENV NODE_ENV=development
+CMD ["npm", "run", "start:dev"]
 
 FROM base as prod
 RUN mkdir -p /home/node/app/node_modules && \
