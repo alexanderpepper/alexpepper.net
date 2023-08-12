@@ -16,10 +16,6 @@ RUN mkdir -p /home/node/app/node_modules && \
     touch /home/node/app/client/dist/index.html && \
     chown -R node:node /home/node/app
 
-
-
-USER node
-
 WORKDIR /home/node/app
 COPY --chown=node:node package*.json ./
 RUN npm install
@@ -28,6 +24,7 @@ WORKDIR /home/node/app/client
 COPY --chown=node:node client/package*.json ./
 RUN npm install
 
+USER node
 WORKDIR /home/node/app
 COPY --chown=node:node . .
 EXPOSE 3000
