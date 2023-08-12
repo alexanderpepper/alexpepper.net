@@ -22,11 +22,16 @@ RUN npm install
 
 WORKDIR /home/node/app/client
 COPY --chown=node:node client/package*.json ./
-RUN npm install && npm run build
+RUN npm install
 
 USER node
 WORKDIR /home/node/app
 COPY --chown=node:node . .
+
+WORKDIR /home/node/app
+RUN npm run build
+
+WORKDIR /home/node/app
 EXPOSE 3000
 ENV NODE_ENV=production
 CMD ["npm", "run", "start:prod"]
