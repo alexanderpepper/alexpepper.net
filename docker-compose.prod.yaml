@@ -16,6 +16,7 @@ services:
     volumes:
       - .:/home/node/app/api
       - /home/node/app/api/node_modules
+      - web-root:/home/node/app/client/dist
     environment:
       NODE_ENV: production
       DB_HOST: host.docker.internal
@@ -48,11 +49,6 @@ volumes:
   certbot-etc:
   certbot-var:
   web-root:
-    driver: local
-    driver_opts:
-      type: none
-      device: /home/node/app/client/dist/
-      o: bind
 
 networks:
   app-network:
