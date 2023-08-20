@@ -1,6 +1,12 @@
 COMPOSE_DOCKER_CLI_BUILD=1
 DOCKER_BUILDKIT=1
 
+# local commands
+
+clean:
+	rm -rf node_modules
+	rm -rf client/node_modules
+
 install:
 	npm install
 	(cd client && npm install)
@@ -9,10 +15,18 @@ install:
 dev:
 	docker compose up
 
+# deployment commands
+
 deploy:
 	docker compose -f docker-compose.prod.yaml build --no-cache
-	docker compose -f docker-compose.prod.yaml up
+	docker compose -f docker-compose.prod.yaml up -d
 
-clean:
-	rm -rf node_modules
-	rm -rf client/node_modules
+stop:
+	docker compose down
+
+destroy:
+	docker compose down --remove-orphans --volumes
+	docker volue rm alexpepperus_certbot-etc
+	docker volue rm alexpepperus_certbot-var
+	docker volue rm alexpepperus_dhparam
+	docker volue rm alexpepperus_web-root
