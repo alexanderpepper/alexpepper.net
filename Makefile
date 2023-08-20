@@ -28,5 +28,5 @@ destroy:
 	docker compose down --remove-orphans --volumes
 	docker volume rm alexpepperus_certbot-etc
 	docker volume rm alexpepperus_certbot-var
-	docker volume rm alexpepperus_dhparams
+	docker volume rm alexpepperus_dhparam
 	docker volume rm alexpepperus_web-root
