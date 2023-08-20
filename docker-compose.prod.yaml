@@ -55,7 +55,7 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/alexpepper/alexpepper.us/dhparam/
+      device: /home/alexpepper/alexpepper.net/dhparam/
       o: bind
 
 networks:

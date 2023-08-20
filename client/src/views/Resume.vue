@@ -15,7 +15,7 @@
           v-flex.right-side(sm10)
             v-layout(wrap)
               v-flex(sm6, xs12)
-                a(href='https://alexpepper.us') alexpepper.us
+                a(href='https://alexpepper.net') alexpepper.net
               v-flex(sm6, xs12)
                 a(href='https://github.com/alexanderpepper') github.com/alexanderpepper
               v-flex(sm6, xs12)
