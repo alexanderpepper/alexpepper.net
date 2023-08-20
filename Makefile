@@ -26,7 +26,7 @@ stop:
 
 destroy:
 	docker compose down --remove-orphans --volumes
-	docker volue rm alexpepperus_certbot-etc
-	docker volue rm alexpepperus_certbot-var
-	docker volue rm alexpepperus_dhparam
-	docker volue rm alexpepperus_web-root
+	docker volume rm alexpepperus_certbot-etc
+	docker volume rm alexpepperus_certbot-var
+	docker volume rm alexpepperus_dhparams
+	docker volume rm alexpepperus_web-root
