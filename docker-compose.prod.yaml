@@ -44,7 +44,7 @@ services:
       - web-root:/var/www/html
     depends_on:
       - webserver
-    command: certonly --webroot --webroot-path=/var/www/html --email alex@alexpepper.us --agree-tos --no-eff-email --staging -d alexpepper.net  -d www.alexpepper.net
+    command: certonly --webroot --webroot-path=/var/www/html --email alex@alexpepper.us --agree-tos --no-eff-email --force-renewal -d alexpepper.net  -d www.alexpepper.net
 volumes:
   certbot-etc:
   certbot-var:
