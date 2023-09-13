@@ -16,7 +16,7 @@ export default {
     position: relative;
     height: 798px;
     width: 380px;
-    background-image: url("https://s3.amazonaws.com/alexpepper.us/images/iphone.png");
+    background-image: url("/iphone.png");
   }
 
   .ios-video {
