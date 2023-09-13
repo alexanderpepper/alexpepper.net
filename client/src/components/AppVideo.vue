@@ -16,7 +16,7 @@ export default {
     position: relative;
     height: 798px;
     width: 380px;
-    background-image: url("/iphone.png");
+    background-image: url("@/assets/iphone.png");
   }
 
   .ios-video {
