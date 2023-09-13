@@ -1,6 +1,6 @@
-const S3_URL = 'https://s3.amazonaws.com/alexpepper.us'
 module.exports = [
   {
+    isActive: true,
     id: 'musicwatch',
     name: 'MusicWatch',
     iTunesId: '418194060',
@@ -31,6 +31,7 @@ module.exports = [
     }
   },
   {
+    isActive: false,
     id: 'bookwatch',
     name: 'BookWatch',
     iTunesId: '433836067',
@@ -39,18 +40,18 @@ module.exports = [
       artworkUrl60: '',
       artworkUrl100: '',
       ipadScreenshotUrls: [
-        '',
-        '',
-        '',
-        ''
+        'https://w.alexpepper.us/apps/bookwatch/bookwatch-tablet-1.png',
+        'https://w.alexpepper.us/apps/bookwatch/bookwatch-tablet-2.png',
+        'https://w.alexpepper.us/apps/bookwatch/bookwatch-tablet-3.png',
+        'https://w.alexpepper.us/apps/bookwatch/bookwatch-tablet-4.png'
       ],
-      artworkUrl512: '',
+      artworkUrl512: 'https://w.alexpepper.us/apps/bookwatch/bookwatch-icon.png',
       screenshotUrls: [
-        '',
-        '',
-        '',
-        '',
-        ''
+        'https://w.alexpepper.us/apps/bookwatch/bookwatch-phone-1.png',
+        'https://w.alexpepper.us/apps/bookwatch/bookwatch-phone-2.png',
+        'https://w.alexpepper.us/apps/bookwatch/bookwatch-phone-3.png',
+        'https://w.alexpepper.us/apps/bookwatch/bookwatch-phone-4.png',
+        'https://w.alexpepper.us/apps/bookwatch/bookwatch-phone-5.png'
       ],
       description: "BookWatch tracks new book and audiobook releases from your favorite authors, so you don't have to.\n\nBookWatch automatically detects the authors already in your audiobook library, and finds their latest releases. You can also use the Authors menu to add or remove authors. Then, pull to refresh any time to check for new releases.",
       releaseDate: '2011-05-06T21:09:55Z',
@@ -61,6 +62,7 @@ module.exports = [
     }
   },
   {
+    isActive: true,
     id: 'appwatch',
     name: 'AppWatch',
     iTunesId: '483322926',
@@ -92,6 +94,7 @@ module.exports = [
     }
   },
   {
+    isActive: true,
     id: 'all-flags',
     name: 'All Flags',
     iTunesId: '791061374',
@@ -123,6 +126,7 @@ module.exports = [
     }
   },
   {
+    isActive: true,
     id: 'i-ching',
     name: 'I Ching',
     iTunesId: '438132417',
@@ -130,6 +134,7 @@ module.exports = [
     iTunesData: {}
   },
   {
+    isActive: true,
     id: 'tao-te-ching',
     name: 'Tao Te Ching',
     iTunesId: '441873577',
@@ -137,6 +142,7 @@ module.exports = [
     iTunesData: {}
   },
   {
+    isActive: true,
     id: 'hua-hu-ching',
     name: 'Hua Hu Ching',
     iTunesId: '443828767',
@@ -144,6 +150,7 @@ module.exports = [
     iTunesData: {}
   },
   {
+    isActive: true,
     id: 'art-of-war',
     name: 'Art of War',
     iTunesId: '443829823',

@@ -21,8 +21,8 @@ export default {
 
   .ios-video {
     position: absolute;
-    top: 118px;
-    left: 33px;
+    top: 116px;
+    left: 30px;
   }
 
   .ios-video > video {
@@ -38,8 +38,8 @@ export default {
     }
 
     .ios-video {
-      top: 88px;
-      left: 24px;
+      top: 86px;
+      left: 22px;
     }
 
     .ios-video > video {
