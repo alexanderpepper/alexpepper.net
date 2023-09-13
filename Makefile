@@ -22,7 +22,7 @@ deploy:
 	docker compose -f docker-compose.prod.yaml up -d
 
 stop:
-	docker compose down
+	docker compose -f docker-compose.prod.yaml down
 
 destroy:
 	docker compose down --remove-orphans --volumes
