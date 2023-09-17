@@ -10,9 +10,16 @@ clean:
 install:
 	npm install
 	(cd client && npm install)
+	npm install -g nodemon
 
 build:
 	docker compose build --no-cache
+
+api:
+	npm run start
+
+ui:
+	(cd client && npm run serve)
 
 dev:
 	docker compose up

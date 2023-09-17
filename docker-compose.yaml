@@ -28,3 +28,5 @@ services:
     volumes:
       - ./client:/usr/src/app/ui
       - /usr/src/app/ui/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true

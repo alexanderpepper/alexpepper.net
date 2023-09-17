@@ -61,7 +61,7 @@ module.exports = [
     name: 'AppWatch',
     iTunesId: '483322926',
     iTunesData: {
-      artworkUrl512: 'https://w.alexpepper.us/apps/bookwatch/appwatch-icon.png',
+      artworkUrl512: 'https://w.alexpepper.us/apps/appwatch/appwatch-icon.png',
       ipadScreenshotUrls: [
         'https://w.alexpepper.us/apps/appwatch/appwatch-tablet-1.png',
         'https://w.alexpepper.us/apps/appwatch/appwatch-tablet-2.png',
