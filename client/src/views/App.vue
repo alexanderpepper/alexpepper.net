@@ -12,7 +12,7 @@
                 .headline.pl-1 {{ app.iTunesData.trackName }}
                 v-btn.mx-1.my-2(outlined, @click='showScreenshots = true') View Screenshots
                 .body-1.pl-1.mb-3(v-html='app.iTunesData.description')
-                a.app-store-badge.mb-1(:href='app.iTunesData.trackViewUrl', target='_')
+                a.app-store-badge.mb-1(:href='app.iTunesData.trackViewUrl', :class="{ 'opacity-50 cursor-not-allowed': !app.iTunesData.trackViewUrl }" target='_')
                   img(src='/app-store-badge.svg')
                 a.app-store-badge(:href='app.playStoreUrl', target='_', v-if='app.playStoreId')
                   img(src='/google-play-badge.png')
@@ -115,5 +115,13 @@ export default {
 
   .carousel__controls {
     background-color: transparent !important;
+  }
+
+  .cursor-not-allowed {
+    cursor: not-allowed !important;
+  }
+
+  .opacity-50 {
+    opacity: 50%;
   }
 </style>

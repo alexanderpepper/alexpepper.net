@@ -1,31 +1,28 @@
 module.exports = [
   {
-    isActive: true,
+    isActive: false,
     id: 'musicwatch',
     name: 'MusicWatch',
     iTunesId: '418194060',
     iTunesData: {
-      artistViewUrl: 'https://apps.apple.com/us/developer/alexander-pepper/id418194063?uo=4',
-      artworkUrl60: 'https://is3-ssl.mzstatic.com/image/thumb/Purple1/v4/ca/e9/18/cae91846-a49b-abb6-8c38-f0f20d1003cc/pr_source.png/60x60bb.jpg',
-      artworkUrl100: 'https://is3-ssl.mzstatic.com/image/thumb/Purple1/v4/ca/e9/18/cae91846-a49b-abb6-8c38-f0f20d1003cc/pr_source.png/100x100bb.jpg',
+      artworkUrl512: 'https://w.alexpepper.us/apps/musicwatch/musicwatch-icon.png',
       ipadScreenshotUrls: [
-        'https://is4-ssl.mzstatic.com/image/thumb/Purple5/v4/74/86/2e/74862ecb-bb42-f29d-ca48-c16f489d5ed2/mzl.cctbrvfd.png/360x480bb.png',
-        'https://is4-ssl.mzstatic.com/image/thumb/Purple3/v4/48/eb/8e/48eb8ed7-5f25-f107-d404-8d3c5095f806/mzl.kotmjlpp.png/360x480bb.png',
-        'https://is4-ssl.mzstatic.com/image/thumb/Purple5/v4/a3/37/8d/a3378d40-c545-f8ae-fae8-723968804db9/mzl.vwnyczru.png/360x480bb.png',
-        'https://is2-ssl.mzstatic.com/image/thumb/Purple5/v4/fc/af/92/fcaf9218-dd5e-0e7f-1829-bf3cb952713f/mzl.ibrmthyy.png/360x480bb.png'
+        'https://w.alexpepper.us/apps/musicwatch/musicwatch-tablet-1.png',
+        'https://w.alexpepper.us/apps/musicwatch/musicwatch-tablet-2.png',
+        'https://w.alexpepper.us/apps/musicwatch/musicwatch-tablet-3.png',
+        'https://w.alexpepper.us/apps/musicwatch/musicwatch-tablet-4.png'
       ],
-      artworkUrl512: 'https://is3-ssl.mzstatic.com/image/thumb/Purple1/v4/ca/e9/18/cae91846-a49b-abb6-8c38-f0f20d1003cc/pr_source.png/512x512bb.jpg',
       screenshotUrls: [
-        'https://is4-ssl.mzstatic.com/image/thumb/Purple3/v4/c6/08/02/c60802ea-a29e-81d1-592d-6a791a4ebabc/pr_source.png/392x696bb.png',
-        'https://is4-ssl.mzstatic.com/image/thumb/Purple5/v4/48/31/a4/4831a442-f625-55cf-3431-649dc1536035/pr_source.png/392x696bb.png',
-        'https://is4-ssl.mzstatic.com/image/thumb/Purple5/v4/41/d9/6f/41d96f29-6c17-7341-3c46-3777ea19b517/pr_source.png/392x696bb.png',
-        'https://is2-ssl.mzstatic.com/image/thumb/Purple3/v4/38/95/ea/3895eada-b6d2-9521-b1e0-f22d3cf58555/pr_source.png/392x696bb.png',
-        'https://is5-ssl.mzstatic.com/image/thumb/Purple3/v4/e9/a0/8e/e9a08e42-09b5-7e49-ecad-e2685ab1ac9f/pr_source.png/392x696bb.png'
+        'https://w.alexpepper.us/apps/musicwatch/musicwatch-phone-1.png',
+        'https://w.alexpepper.us/apps/musicwatch/musicwatch-phone-2.png',
+        'https://w.alexpepper.us/apps/musicwatch/musicwatch-phone-3.png',
+        'https://w.alexpepper.us/apps/musicwatch/musicwatch-phone-4.png',
+        'https://w.alexpepper.us/apps/musicwatch/musicwatch-phone-5.png'
       ],
       description: "MusicWatch tracks new music releases from your favorite artists, so you don't have to. \n\nMusicWatch automatically detects the artists already in your library, and finds their latest releases. You can also use the Artists menu to add or remove artists. Then, pull to refresh any time to check for new releases. \n\nIt's simple, and it saves time. \n\nMusicWatch remembers your list of artists using iCloud, synchronizing it between your devices and restoring it after fresh installations.",
       releaseDate: '2011-02-15T21:09:55Z',
       currentVersionReleaseDate: '2014-12-29T18:54:16Z',
-      trackViewUrl: 'https://apps.apple.com/us/app/musicwatch/id418194060?uo=4',
+      trackViewUrl: '',
       fileSizeBytes: '2598912',
       version: '2.0.4'
     }
@@ -36,16 +33,13 @@ module.exports = [
     name: 'BookWatch',
     iTunesId: '433836067',
     iTunesData: {
-      artistViewUrl: 'https://apps.apple.com/us/developer/alexander-pepper/id418194063?uo=4',
-      artworkUrl60: '',
-      artworkUrl100: '',
+      artworkUrl512: 'https://w.alexpepper.us/apps/bookwatch/bookwatch-icon.png',
       ipadScreenshotUrls: [
         'https://w.alexpepper.us/apps/bookwatch/bookwatch-tablet-1.png',
         'https://w.alexpepper.us/apps/bookwatch/bookwatch-tablet-2.png',
         'https://w.alexpepper.us/apps/bookwatch/bookwatch-tablet-3.png',
         'https://w.alexpepper.us/apps/bookwatch/bookwatch-tablet-4.png'
       ],
-      artworkUrl512: 'https://w.alexpepper.us/apps/bookwatch/bookwatch-icon.png',
       screenshotUrls: [
         'https://w.alexpepper.us/apps/bookwatch/bookwatch-phone-1.png',
         'https://w.alexpepper.us/apps/bookwatch/bookwatch-phone-2.png',
@@ -56,39 +50,36 @@ module.exports = [
       description: "BookWatch tracks new book and audiobook releases from your favorite authors, so you don't have to.\n\nBookWatch automatically detects the authors already in your audiobook library, and finds their latest releases. You can also use the Authors menu to add or remove authors. Then, pull to refresh any time to check for new releases.",
       releaseDate: '2011-05-06T21:09:55Z',
       currentVersionReleaseDate: '2014-12-29T18:54:16Z',
-      trackViewUrl: 'https://apps.apple.com/us/app/musicwatch/id418194060?uo=4',
+      trackViewUrl: '',
       fileSizeBytes: '2598912',
       version: '2.0.4'
     }
   },
   {
-    isActive: true,
+    isActive: false,
     id: 'appwatch',
     name: 'AppWatch',
     iTunesId: '483322926',
     iTunesData: {
-      artworkUrl512: 'https://is1-ssl.mzstatic.com/image/thumb/Purple3/v4/3c/a9/52/3ca952e7-a9de-2006-68ac-10111cc553f7/pr_source.png/512x512bb.jpg',
-      artworkUrl100: 'https://is1-ssl.mzstatic.com/image/thumb/Purple3/v4/3c/a9/52/3ca952e7-a9de-2006-68ac-10111cc553f7/pr_source.png/100x100bb.jpg',
-      artistViewUrl: 'https://apps.apple.com/us/developer/alexander-pepper/id418194063?uo=4',
+      artworkUrl512: 'https://w.alexpepper.us/apps/bookwatch/appwatch-icon.png',
       ipadScreenshotUrls: [
-        'https://is5-ssl.mzstatic.com/image/thumb/Purple3/v4/9f/60/6b/9f606b9b-0a86-eac9-768f-dd629fd78605/mzl.yecwjqra.png/360x480bb.png',
-        'https://is4-ssl.mzstatic.com/image/thumb/Purple1/v4/91/2f/21/912f2111-8c15-dbde-870a-169fbb4ce232/mzl.yypmkbwe.png/360x480bb.png',
-        'https://is3-ssl.mzstatic.com/image/thumb/Purple1/v4/bf/bc/9c/bfbc9c96-c638-c42e-cd45-32ffc5161648/mzl.fglljvft.png/360x480bb.png',
-        'https://is3-ssl.mzstatic.com/image/thumb/Purple1/v4/19/c3/f0/19c3f077-9c49-a066-be5d-66dbe25116e1/mzl.ctnwopju.png/360x480bb.png'
+        'https://w.alexpepper.us/apps/appwatch/appwatch-tablet-1.png',
+        'https://w.alexpepper.us/apps/appwatch/appwatch-tablet-2.png',
+        'https://w.alexpepper.us/apps/appwatch/appwatch-tablet-3.png',
+        'https://w.alexpepper.us/apps/appwatch/appwatch-tablet-4.png'
       ],
-      artworkUrl60: 'https://is1-ssl.mzstatic.com/image/thumb/Purple3/v4/3c/a9/52/3ca952e7-a9de-2006-68ac-10111cc553f7/pr_source.png/60x60bb.jpg',
       screenshotUrls: [
-        'https://is3-ssl.mzstatic.com/image/thumb/Purple5/v4/9a/5c/58/9a5c582f-cb08-3606-5f1f-142ef628230b/pr_source.png/392x696bb.png',
-        'https://is3-ssl.mzstatic.com/image/thumb/Purple1/v4/d6/2f/2b/d62f2b4a-6b4a-71f2-d7bf-3535448ed7ff/pr_source.png/392x696bb.png',
-        'https://is2-ssl.mzstatic.com/image/thumb/Purple3/v4/be/16/80/be168070-544c-7e11-652c-fe8269430cec/pr_source.png/392x696bb.png',
-        'https://is2-ssl.mzstatic.com/image/thumb/Purple3/v4/d4/14/e6/d414e663-aafe-bd18-e15f-9dbd3063a827/pr_source.png/392x696bb.png',
-        'https://is4-ssl.mzstatic.com/image/thumb/Purple3/v4/8b/11/04/8b1104b8-0cba-2e4a-244e-f3e62f39dbac/pr_source.png/392x696bb.png'
+        'https://w.alexpepper.us/apps/appwatch/appwatch-phone-1.png',
+        'https://w.alexpepper.us/apps/appwatch/appwatch-phone-2.png',
+        'https://w.alexpepper.us/apps/appwatch/appwatch-phone-3.png',
+        'https://w.alexpepper.us/apps/appwatch/appwatch-phone-4.png',
+        'https://w.alexpepper.us/apps/appwatch/appwatch-phone-5.png'
       ],
       currentVersionReleaseDate: '2014-12-29T19:16:23Z',
       releaseNotes: 'This app has been updated by Apple to display the Apple Watch app icon.\n\n2.0.2:\n• New simplified user interface\n• Add multiple publishers at once\n• Faster artwork downloading\n2.0.4:\n• Bugfixes',
       description: "AppWatch tracks new iOS and Mac app releases from your favorite publishers, so you don't have to.\n\nUse the Publishers menu to add or remove app publishers. Then, pull to refresh any time to check for new app releases. \n\nIt's simple, and it saves time. \n\nAppWatch remembers your list of publishers using iCloud, synchronizing it between your devices and restoring it after fresh installations.",
       releaseDate: '2011-12-08T02:50:43Z',
-      trackViewUrl: 'https://apps.apple.com/us/app/appwatch/id483322926?uo=4',
+      trackViewUrl: '',
       fileSizeBytes: '2638848',
       version: '2.0.4'
     }
@@ -99,7 +90,7 @@ module.exports = [
     name: 'All Flags',
     iTunesId: '791061374',
     iTunesData: {
-      artistViewUrl: 'https://apps.apple.com/us/developer/alexander-pepper/id418194063?uo=4',
+      artworkUrl512: 'https://is5-ssl.mzstatic.com/image/thumb/Purple20/v4/aa/fe/83/aafe83ba-0e81-3bea-11bd-92fb34afdf43/mzl.icziirup.png/512x512bb.jpg',
       screenshotUrls: [
         'https://is5-ssl.mzstatic.com/image/thumb/Purple69/v4/b0/85/b0/b085b071-5a43-55af-5627-6241f95eaa66/pr_source.png/392x696bb.png',
         'https://is5-ssl.mzstatic.com/image/thumb/Purple49/v4/ea/87/f5/ea87f5f4-9870-64f7-d53f-a9ce84da6501/pr_source.png/392x696bb.png',
@@ -114,9 +105,6 @@ module.exports = [
         'https://is2-ssl.mzstatic.com/image/thumb/Purple69/v4/4c/3e/c4/4c3ec478-765c-3b1e-fc11-444628d2b327/pr_source.png/576x768bb.png',
         'https://is5-ssl.mzstatic.com/image/thumb/Purple69/v4/9f/c4/bb/9fc4bb79-6ab8-7be1-b9e8-9b37182d3b99/pr_source.png/576x768bb.png'
       ],
-      artworkUrl60: 'https://is5-ssl.mzstatic.com/image/thumb/Purple20/v4/aa/fe/83/aafe83ba-0e81-3bea-11bd-92fb34afdf43/mzl.icziirup.png/60x60bb.jpg',
-      artworkUrl512: 'https://is5-ssl.mzstatic.com/image/thumb/Purple20/v4/aa/fe/83/aafe83ba-0e81-3bea-11bd-92fb34afdf43/mzl.icziirup.png/512x512bb.jpg',
-      artworkUrl100: 'https://is5-ssl.mzstatic.com/image/thumb/Purple20/v4/aa/fe/83/aafe83ba-0e81-3bea-11bd-92fb34afdf43/mzl.icziirup.png/100x100bb.jpg',
       trackViewUrl: 'https://apps.apple.com/us/app/all-flags/id791061374?uo=4',
       fileSizeBytes: '22642688',
       description: "All Flags is a fun and simple educational tool for the serious learner. \n\nQuickly browse, search, and view the details of world flags\n\nTest your knowledge by entering country names or tapping the correct country's flag to answer.",

@@ -10,6 +10,8 @@ clean:
 install:
 	npm install
 	(cd client && npm install)
+
+build:
 	docker compose build --no-cache
 
 dev:
