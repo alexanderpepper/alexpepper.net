@@ -19,28 +19,32 @@ Docker config based on the article
 1. Configure DNS to point to the server's IP
 2. On the server, replace the contents of `nginx.conf` with the following:
 ```nginx configuration
-  server {
-          listen 80;
-          listen [::]:80;
+server {
+        listen 80;
+        listen [::]:80;
 
-          root /var/www/html;
-          index index.html index.htm index.nginx-debian.html;
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
 
-          server_name alexpepper.net www.alexpepper.net;
+        server_name alexpepper.net www.alexpepper.net;
 
-          location / {
-                  proxy_pass http://api:8080;
-          }
+        location / {
+                proxy_pass http://api:8080;
+        }
 
-          location ~ /.well-known/acme-challenge {
-                  allow all;
-                  root /var/www/html;
-          }
-  }
+        location ~ /.well-known/acme-challenge {
+                allow all;
+                root /var/www/html;
+        }
+}
 ```
 3. Run `sudo make deploy` to run the application and request certificates.
 0. Verify that the certificates were generated correctly.
 0. Run `sudo make stop` to take the application down.
 0. Undo changes to `nginx.conf` to run on HTTPS.
 0. Run `sudo make deploy` again to deploy the application with SSL.
+0. Sometimes, in order to pick up front-end changes, the web-root volume need to be deleted:
+```bash
+docker volume rm alexpeppernet_web-root
+```
 
