@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMPOSE="/usr/local/bin/docker compose --ansi never -f docker-compose.prod.yaml"
+COMPOSE="/usr/bin/docker compose --ansi never -f docker-compose.prod.yaml"
 DOCKER="/usr/bin/docker"
 
 cd /home/alex/alexpepper.net/
