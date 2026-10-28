@@ -47,21 +47,12 @@ Docker config based on the article
 ### Install Docker Compose
 1. `sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc`
 2. `sudo chmod a+r /etc/apt/keyrings/docker.asc`
-3. ```echo \
-"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-$(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
-sudo tee /etc/apt/sources.list.d/docker.list > /dev/null```
+3. `echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`
 4. `sudo apt update`
 5. `sudo apt install docker-compose-plugin`
 6. `docker compose verison`
 
-# Add the repository to Apt sources:
-echo \
-"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-$(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
-sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update`
-
+### Request certificates with CertBot
 1. Configure DNS to point to the server's IP
 2. In the application's folder on the server, `mkdir dhparam`
 3. `sudo openssl dhparam -out /home/alex/alexpepper.net/dhparam/dhparam-2048.pem 2048`
@@ -96,4 +87,12 @@ server {
 ```bash
 docker volume rm alexpeppernet_web-root
 ```
+
+## Automate certificate renewal
+1. `sudo crontab -e`
+2. Add the following line to the end:
+> `0 12 * * * /home/alex/alexpepper.net/ssl_renew.sh >> /var/log/cron.log 2>&1`
+3. After five minutes, check cron.log to confirm whether the renewal request has succeeded:
+> `tail -f /var/log/cron.log`
+
 
