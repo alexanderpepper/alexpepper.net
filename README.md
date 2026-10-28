@@ -91,7 +91,7 @@ docker volume rm alexpeppernet_web-root
 ## Automate certificate renewal
 1. `sudo crontab -e`
 2. Add the following line to the end:
-> `0 12 * * * /home/alex/alexpepper.net/ssl_renew.sh >> /var/log/cron.log 2>&1`
+> `0 12 * * * /home/alex/alexpepper.net/ssl-renew.sh >> /var/log/cron.log 2>&1`
 3. After five minutes, check cron.log to confirm whether the renewal request has succeeded:
 > `tail -f /var/log/cron.log`
 
