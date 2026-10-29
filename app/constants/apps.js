@@ -13,11 +13,11 @@ module.exports = [
         'https://w.alexpepper.us/apps/musicwatch/musicwatch-tablet-4.png'
       ],
       screenshotUrls: [
-        'https://w.alexpepper.us/apps/musicwatch/musicwatch-phone-1.png',
-        'https://w.alexpepper.us/apps/musicwatch/musicwatch-phone-2.png',
-        'https://w.alexpepper.us/apps/musicwatch/musicwatch-phone-3.png',
-        'https://w.alexpepper.us/apps/musicwatch/musicwatch-phone-4.png',
-        'https://w.alexpepper.us/apps/musicwatch/musicwatch-phone-5.png'
+        'https://w.alexpepper.us/apps/musicwatch/musicwatch-iphone-1.png',
+        'https://w.alexpepper.us/apps/musicwatch/musicwatch-iphone-2.png',
+        'https://w.alexpepper.us/apps/musicwatch/musicwatch-iphone-3.png',
+        'https://w.alexpepper.us/apps/musicwatch/musicwatch-iphone-4.png',
+        'https://w.alexpepper.us/apps/musicwatch/musicwatch-iphone-5.png'
       ],
       description: "MusicWatch tracks new music releases from your favorite artists, so you don't have to. \n\nMusicWatch automatically detects the artists already in your library, and finds their latest releases. You can also use the Artists menu to add or remove artists. Then, pull to refresh any time to check for new releases. \n\nIt's simple, and it saves time. \n\nMusicWatch remembers your list of artists using iCloud, synchronizing it between your devices and restoring it after fresh installations.",
       releaseDate: '2011-02-15T21:09:55Z',
@@ -69,11 +69,11 @@ module.exports = [
         'https://w.alexpepper.us/apps/appwatch/appwatch-tablet-4.png'
       ],
       screenshotUrls: [
-        'https://w.alexpepper.us/apps/appwatch/appwatch-phone-1.png',
-        'https://w.alexpepper.us/apps/appwatch/appwatch-phone-2.png',
-        'https://w.alexpepper.us/apps/appwatch/appwatch-phone-3.png',
-        'https://w.alexpepper.us/apps/appwatch/appwatch-phone-4.png',
-        'https://w.alexpepper.us/apps/appwatch/appwatch-phone-5.png'
+        'https://w.alexpepper.us/apps/appwatch/appwatch-iphone-1.png',
+        'https://w.alexpepper.us/apps/appwatch/appwatch-iphone-2.png',
+        'https://w.alexpepper.us/apps/appwatch/appwatch-iphone-3.png',
+        'https://w.alexpepper.us/apps/appwatch/appwatch-iphone-4.png',
+        'https://w.alexpepper.us/apps/appwatch/appwatch-iphone-5.png'
       ],
       currentVersionReleaseDate: '2014-12-29T19:16:23Z',
       releaseNotes: 'This app has been updated by Apple to display the Apple Watch app icon.\n\n2.0.2:\n• New simplified user interface\n• Add multiple publishers at once\n• Faster artwork downloading\n2.0.4:\n• Bugfixes',
@@ -117,7 +117,7 @@ module.exports = [
     isActive: true,
     id: 'i-ching',
     name: 'I Ching',
-    iTunesId: '438132417',
+    iTunesId: '489725185',
     playStoreId: 'com.brianbrownewalker.ic',
     iTunesData: {}
   },
@@ -125,7 +125,7 @@ module.exports = [
     isActive: true,
     id: 'tao-te-ching',
     name: 'Tao Te Ching',
-    iTunesId: '441873577',
+    iTunesId: '495870722',
     playStoreId: 'com.brianbrownewalker.ttc',
     iTunesData: {}
   },
@@ -133,7 +133,7 @@ module.exports = [
     isActive: true,
     id: 'hua-hu-ching',
     name: 'Hua Hu Ching',
-    iTunesId: '443828767',
+    iTunesId: '495872036',
     playStoreId: 'com.brianbrownewalker.hhc',
     iTunesData: {}
   },
@@ -141,7 +141,7 @@ module.exports = [
     isActive: true,
     id: 'art-of-war',
     name: 'Art of War',
-    iTunesId: '443829823',
+    iTunesId: '518548267',
     playStoreId: 'com.brianbrownewalker.aow',
     iTunesData: {}
   }
